@@ -7,9 +7,13 @@ OPTIONS=(
     "退出"
 )
 
+# 定义 napcat 和 Eridanus 的 screen 会话名称
+NAPCAT_SESSION="napcat"
+ERIDANUS_SESSION="eridanus"
+
 # 检查 napcat 是否正在运行
 check_napcat_running() {
-    if screen -list | grep -q "napcat"; then
+    if screen -list | grep -q "$NAPCAT_SESSION"; then
         return 0  # napcat 正在运行
     else
         return 1  # napcat 未运行
@@ -28,10 +32,11 @@ while true; do
     case $CHOICE in
         "运行 napcat")
             # 执行命令
-            screen -dmS napcat bash -c "xvfb-run -a qq --no-sandbox"
+            screen -dmS "$NAPCAT_SESSION" bash -c "xvfb-run -a qq --no-sandbox"
+            sleep 2  # 等待 2 秒后检查启动状态
             # 检查 napcat 是否启动成功
             if check_napcat_running; then
-                dialog --msgbox "已启动 napcat!" 5 30
+                dialog --msgbox "已成功启动 napcat！" 5 30
                 # 弹窗显示 URL
                 show_url
             else
@@ -42,8 +47,8 @@ while true; do
             # 检查 napcat 是否正在运行
             if check_napcat_running; then
                 # 执行命令
-                screen -dmS eridanus bash -c "python3 main.py"
-                dialog --msgbox "已启动 Eridanus!" 5 30
+                screen -dmS "$ERIDANUS_SESSION" bash -c "python3 Eridanus/main.py"
+                dialog --msgbox "已成功启动 Eridanus！" 5 30
             else
                 dialog --msgbox "napcat 未运行，请先运行 napcat！" 5 40
             fi

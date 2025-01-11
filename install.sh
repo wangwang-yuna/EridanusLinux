@@ -59,7 +59,8 @@ fi
 # 安装 pip 依赖包
 if [ -f requirements.txt ]; then
     echo "安装 pip 依赖包"
-    pip3 install -r Eridanus/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+    cd Eridanus
+    pip3 install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 else
     echo "requirements.txt 文件不存在!"
     echo "请检查文件路径是否正确!"
