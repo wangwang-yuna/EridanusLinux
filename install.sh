@@ -43,18 +43,15 @@ else
 fi
 
 # 安装 napcat
-echo "安装 napcat，如果不想安装可以直接按回车跳过"
+echo "安装 napcat"
 
 # 下载脚本并检查内容
 curl -o napcat.sh https://nclatest.znin.net/NapNeko/NapCat-Installer/main/script/install.sh
 if [[ -f "napcat.sh" ]]; then
     echo "下载成功，开始安装..."
-    dialog --yesno "是否安装 napcat?" 7 60
-    if [ $? -eq 0 ]; then
-        sudo bash napcat.sh
-    else
-        echo "跳过 napcat 安装"
-    fi
+    dialog --msgbox "是否安装 napcat?" 7 60
+    # 无条件执行安装
+    sudo bash napcat.sh
 else
     echo "下载失败，请检查网络连接！"
     exit 1
