@@ -1,7 +1,6 @@
 #!/bin/bash
 
 echo "sudo将持续安装过程"
-cd
 # 更新软件包源
 sudo apt-get update
 # 安装软件包
