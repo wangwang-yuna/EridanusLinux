@@ -29,6 +29,13 @@ show_url() {
 while true; do
     CHOICE=$(dialog --title "选择一个选项" --menu "请使用上下箭头选择一个选项：" 15 50 3 "${OPTIONS[@]}" 3>&1 1>&2 2>&3)
     
+    # 检查用户选择的有效性
+    case $? in
+        1)  # 用户按了 ESC 或 Cancel
+            dialog --msgbox "退出脚本！" 5 20
+            exit ;;
+    esac
+
     case $CHOICE in
         "运行 napcat")
             # 执行命令
