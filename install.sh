@@ -15,12 +15,6 @@ link2=https://gitclone.com/github.com/avilliai/Eridanus.git
 link3=https://github.com/avilliai/Eridanus.git
 default=https://ghp.ci/https://github.com/avilliai/Eridanus.git
 
-echo "请选择git源（1-4），默认选择4，如果不懂请直接按回车"
-echo "1. https://githubfast.com/avilliai/Eridanus.git"
-echo "2. https://gitclone.com/github.com/avilliai/Eridanus.git"
-echo "3. https://github.com/avilliai/Eridanus.git"
-echo "4. 默认 https://ghp.ci/https://github.com/avilliai/Eridanus.git"
-
 # 使用 select 进行选择
 select link in "$link1" "$link2" "$link3" "$default"; do
     case $REPLY in
