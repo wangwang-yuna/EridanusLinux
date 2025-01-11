@@ -1,2 +1,0 @@
-# EridanusLinux
-linux的Eridanus
