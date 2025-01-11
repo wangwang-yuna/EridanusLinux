@@ -4,7 +4,10 @@ echo "sudo将持续安装过程"
 # 更新软件包源
 sudo apt-get update
 # 安装软件包
-sudo apt-get install -y git python3 python3-pip python3.11-venv unzip dialog curl wget screen
+sudo apt-get install -y git python3 python3-pip unzip dialog curl wget screen
+sudo apt-get install -y python3.12-venv
+sudo apt-get install -y python3.11-venv
+sudo apt-get install -y python3-venv
 
 # 用户选择列表倒计时10秒
 echo "选择git clone源"
