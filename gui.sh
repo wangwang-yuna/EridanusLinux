@@ -31,7 +31,7 @@ if [ $? -eq 0 ]; then
                 sleep 2  # 等待 napcat 启动
             fi
             echo "正在启动 Eridanus..."
-            python3 main.py
+            python3 Eridanus/main.py
             ;;
         2)
             echo "正在启动 napcat..."
