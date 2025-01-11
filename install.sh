@@ -69,10 +69,6 @@ fi
 echo "请不要忘记激活虚拟环境！"
 echo "source .base/bin/activate"
 
-# clone 此项目
-echo "clone 此项目"
-git clone https://github.com/wangwang-yuna/Eridanuslinux
-
 echo "=================================================================================================================================="
 
 echo "本脚本只是为了方便学习 Eridanus，如果用于商业用途，请自行承担风险！"
